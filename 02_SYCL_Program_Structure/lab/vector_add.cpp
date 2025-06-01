@@ -1,5 +1,5 @@
 //==============================================================
-// Copyright © 2020 Intel Corporation
+// Copyright © Intel Corporation
 //
 // SPDX-License-Identifier: MIT
 // =============================================================
@@ -16,10 +16,9 @@ int main() {
     for (int i = 0; i < N; i++) std::cout << vector1[i] << " ";
 
     //# STEP 1 : Create second vector, initialize to 20 and print values
-
-    //# YOUR CODE GOES HERE
-    
-    
+    std::vector<int> vector2(N, 20);
+    std::cout<<"\nInput Vector2: ";    
+    for (int i = 0; i < N; i++) std::cout << vector2[i] << " ";
     
     
     //# Create Buffer
@@ -27,10 +26,7 @@ int main() {
     buffer vector1_buffer(vector1);
 
     //# STEP 2 : Create buffer for second vector 
-
-    //# YOUR CODE GOES HERE
-
-
+    buffer vector2_buffer(vector2);
 
 
     //# Submit task to add vector
@@ -42,14 +38,14 @@ int main() {
       //# STEP 3 - add second accessor for second buffer
 
       //# YOUR CODE GOES HERE
-
+      accessor vector2_accessor(vector2_buffer, h, read_only);
 
 
       h.parallel_for(range<1>(N), [=](id<1> index) {
 
         //# STEP 4 : Modify the code below to add the second vector to first one
 
-        vector1_accessor[index] += 1;
+        vector1_accessor[index] += vector2_accessor[index];
 
 
 
