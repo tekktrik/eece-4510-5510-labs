@@ -36,15 +36,12 @@ int main() {
       accessor vector1_accessor (vector1_buffer,h);
       
       //# STEP 3 - add second accessor for second buffer
-
-      //# YOUR CODE GOES HERE
       accessor vector2_accessor(vector2_buffer, h, read_only);
 
 
       h.parallel_for(range<1>(N), [=](id<1> index) {
 
         //# STEP 4 : Modify the code below to add the second vector to first one
-
         vector1_accessor[index] += vector2_accessor[index];
 
 
