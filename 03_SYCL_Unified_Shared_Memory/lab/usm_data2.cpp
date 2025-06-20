@@ -6,7 +6,7 @@
 #include <sycl/sycl.hpp>
 using namespace sycl;
 
-static const int N = 1024;
+static const int N = 1048576;
 
 int main() {
   queue q;
