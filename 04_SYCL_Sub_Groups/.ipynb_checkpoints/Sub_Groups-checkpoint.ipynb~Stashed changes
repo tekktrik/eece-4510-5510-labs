@@ -212,7 +212,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 11,
    "metadata": {},
    "outputs": [
     {
@@ -252,7 +252,7 @@
     "      //# query sub_group and print sub_group info once per sub_group\n",
     "      if (sg.get_local_id()[0] == 0) {\n",
     "        out << \"sub_group id: \" << sg.get_group_id()[0] << \" of \"\n",
-    "            << sg.get_group_range()[0] << \", size=\" << sg.get_local_range()[0]\n",
+    "            << sg.get_group_range()[0] << \", size=\" << sg.get_local_range()\n",
     "            << \"\\n\";\n",
     "      }\n",
     "    });\n",
@@ -270,7 +270,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 12,
    "metadata": {},
    "outputs": [
     {
@@ -279,8 +279,8 @@
      "text": [
       "## u3eed2aeb1316a4735ff54db21771fda is compiling SYCL_Essentials Module4 -- SYCL Sub Groups - 1 of 7 sub_group_info.cpp\n",
       "Device : Intel(R) Data Center GPU Max 1100\n",
-      "sub_group id: 1 of 2, size=32\n",
-      "sub_group id: 0 of 2, size=32\n"
+      "sub_group id: 1 of 2, size={32}\n",
+      "sub_group id: 0 of 2, size={32}\n"
      ]
     }
    ],
@@ -342,7 +342,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 11,
    "metadata": {},
    "outputs": [
     {
@@ -409,7 +409,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 12,
    "metadata": {},
    "outputs": [
     {
@@ -420,8 +420,8 @@
       "Device : Intel(R) Data Center GPU Max 1100\n",
       "Supported Sub-Group Sizes : 16 32 \n",
       "Max Sub-Group Size        : 32\n",
-      "sub_group id: 0 of 2, size=32\n",
-      "sub_group id: 1 of 2, size=32\n"
+      "sub_group id: 1 of 2, size=32\n",
+      "sub_group id: 0 of 2, size=32\n"
      ]
     }
    ],
@@ -521,7 +521,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 25,
    "metadata": {},
    "outputs": [
     {
@@ -585,7 +585,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 26,
    "metadata": {},
    "outputs": [
     {
@@ -638,7 +638,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 33,
    "metadata": {},
    "outputs": [
     {
@@ -705,7 +705,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 34,
    "metadata": {},
    "outputs": [
     {
@@ -746,14 +746,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 35,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Overwriting lab/sub_group_broadcast.cpp\n"
+      "Writing lab/sub_group_broadcast.cpp\n"
      ]
     }
    ],
@@ -808,7 +808,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 36,
    "metadata": {},
    "outputs": [
     {
@@ -851,7 +851,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 17,
    "metadata": {},
    "outputs": [
     {
@@ -927,7 +927,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 18,
    "metadata": {},
    "outputs": [
     {
@@ -980,7 +980,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 9,
    "metadata": {
     "tags": []
    },
@@ -1076,7 +1076,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 10,
    "metadata": {},
    "outputs": [
     {
@@ -1117,6 +1117,13 @@
     "\n",
     "6. __[EECE.5510 Only]__ If you use a subgroup of size 16, what results would you get for code example 1.10.1 and 1.10.4? Please explain your answer. Hint: you could modify the example codes to verify your hypothesis."
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
